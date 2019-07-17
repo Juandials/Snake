@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Snake">
+  <ClassDiagramComponents>
+    <Class name="App" package="snake" visibility="public" xPosition="37.0" yPosition="37.0">
+      <Fields>
+        <Field name="rootPanel" type="JPanel" visibility="private"/>
+        <Field name="app" type="App" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="App" visibility="public" isStatic="true"/>
+        <Method name="createApp" returnType="void" visibility="private"/>
+        <Method name="runScene" returnType="void" visibility="public">
+          <Argument type="JPanel" name="scene"/>
+        </Method>
+        <Method name="destroyScene" returnType="void" visibility="private"/>
+        <Method name="calculateScreen" returnType="double[]" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="Control" package="snake" visibility="public" xPosition="709.0" yPosition="652.0">
+      <Fields>
+        <Field name="instanceGame" type="GameScene" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="GameScene" name="instanceGame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="dispatchKeyEvent" returnType="boolean" visibility="public">
+          <Argument type="KeyEvent" name="e"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Dialog" package="snake" visibility="public" xPosition="278.0" yPosition="37.0">
+      <Fields>
+        <Field name="actions" type="ActionListener[]" visibility="private"/>
+        <Field name="font" type="Font" visibility="private"/>
+        <Field name="message" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="ActionListener[]" name="actions"/>
+          <Argument type="String" name="title"/>
+          <Argument type="String" name="message"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="createDialog" returnType="void" visibility="private"/>
+      </Methods>
+    </Class>
+    <Class name="FramesArc" package="snake" visibility="public" xPosition="519.0" yPosition="762.0">
+      <Fields>
+        <Field name="s" type="boolean" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="package"/>
+        <Constructor visibility="package">
+          <Argument type="boolean" name="s"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="cerrarJuego" returnType="void" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="GameScene" package="snake" visibility="public" xPosition="666.0" yPosition="37.0">
+      <Fields>
+        <Field name="panelGame" type="JPanel" visibility="private"/>
+        <Field name="matrix" type="JLabel[][]" visibility="private"/>
+        <Field name="score" type="JLabel" visibility="private"/>
+        <Field name="play" type="LogicaSnake" visibility="private"/>
+        <Field name="background" type="Color" visibility="private"/>
+        <Field name="motion" type="LogicaJuego" visibility="private"/>
+        <Field name="font" type="Font" visibility="private"/>
+        <Field name="keyboardFocus" type="KeyboardFocusManager" visibility="private"/>
+        <Field name="keyEventDispatcher" type="Control" visibility="private"/>
+        <Field name="puntaje" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="createScene" returnType="void" visibility="private"/>
+        <Method name="changeScene" returnType="void" visibility="public">
+          <Argument type="JPanel" name="scene"/>
+        </Method>
+        <Method name="updateScore" returnType="void" visibility="public">
+          <Argument type="int" name="p"/>
+        </Method>
+        <Method name="updateScoren" returnType="void" visibility="public">
+          <Argument type="int" name="p"/>
+        </Method>
+        <Method name="addKeyboardFocus" returnType="void" visibility="public"/>
+        <Method name="removeKeyFocus" returnType="void" visibility="protected"/>
+        <Method name="changeColorPanel" returnType="void" visibility="public"/>
+        <Method name="restoreColorPanel" returnType="void" visibility="public"/>
+        <Method name="getScheduler" returnType="LogicaJuego" visibility="public"/>
+        <Method name="getPlay" returnType="LogicaSnake" visibility="public"/>
+        <Method name="getBackgroundGame" returnType="Color" visibility="public"/>
+        <Method name="getMatrix" returnType="JLabel[][]" visibility="public"/>
+        <Method name="getScore" returnType="JLabel" visibility="public"/>
+        <Method name="setScore" returnType="void" visibility="public">
+          <Argument type="JLabel" name="score"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LogicaJuego" package="snake" visibility="public" xPosition="1066.0" yPosition="20.0">
+      <Fields>
+        <Field name="instanceGame" type="GameScene" visibility="private"/>
+        <Field name="actions" type="ActionListener[]" visibility="private"/>
+        <Field name="timerBonus" type="Timer" visibility="private"/>
+        <Field name="timerMotion" type="Timer[]" visibility="private"/>
+        <Field name="timeBonus" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="GameScene" name="instanceGame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="valueSpeed" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="actuate" returnType="void" visibility="public">
+          <Argument type="int" name="e"/>
+        </Method>
+        <Method name="createMotion" returnType="void" visibility="private"/>
+        <Method name="startMotion" returnType="void" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+        <Method name="stopMotion" returnType="void" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+        <Method name="stopAllMotions" returnType="void" visibility="public"/>
+        <Method name="increaseSpeed" returnType="void" visibility="public"/>
+        <Method name="restoreSpeed" returnType="void" visibility="public"/>
+        <Method name="stopAllTimers" returnType="void" visibility="public"/>
+        <Method name="getSpeed" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="LogicaSnake" package="snake" visibility="public" xPosition="1066.0" yPosition="433.0">
+      <Fields>
+        <Field name="f" type="FramesArc" visibility="package"/>
+        <Field name="instanceGame" type="GameScene" visibility="private"/>
+        <Field name="matrix" type="JLabel[][]" visibility="private"/>
+        <Field name="snakeLen" type="int" visibility="private"/>
+        <Field name="snake" type="ArrayList&lt;String&gt;" visibility="private"/>
+        <Field name="snakeColor" type="Color" visibility="private"/>
+        <Field name="direction" type="String" visibility="private"/>
+        <Field name="bonus" type="boolean" visibility="private"/>
+        <Field name="rnd" type="Random" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="GameScene" name="instanceGame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="cerrar" returnType="void" visibility="public"/>
+        <Method name="startGame" returnType="void" visibility="private"/>
+        <Method name="eat" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="incrementScore" returnType="void" visibility="public">
+          <Argument type="int" name="p"/>
+        </Method>
+        <Method name="createFood" returnType="void" visibility="public"/>
+        <Method name="createSnake" returnType="void" visibility="public"/>
+        <Method name="reposition" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="index"/>
+        </Method>
+        <Method name="moveSnake" returnType="void" visibility="public">
+          <Argument type="String" name="key"/>
+        </Method>
+        <Method name="deleteArray" returnType="void" visibility="public">
+          <Argument type="ArrayList&lt;String&gt;" name="x"/>
+        </Method>
+        <Method name="youWin" returnType="void" visibility="public"/>
+        <Method name="youLose" returnType="void" visibility="public"/>
+        <Method name="getSnakeColor" returnType="Color" visibility="public"/>
+        <Method name="getXFood" returnType="int" visibility="public"/>
+        <Method name="getYFood" returnType="int" visibility="public"/>
+        <Method name="getMatrix" returnType="JLabel[][]" visibility="public"/>
+        <Method name="getBonus" returnType="boolean" visibility="public"/>
+        <Method name="setBonus" returnType="void" visibility="public">
+          <Argument type="boolean" name="e"/>
+        </Method>
+        <Method name="getDirection" returnType="String" visibility="public"/>
+        <Method name="getScore" returnType="int" visibility="public"/>
+        <Method name="getLen" returnType="int" visibility="public"/>
+        <Method name="getFoodInBonus" returnType="ArrayList&lt;String&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="snake" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Scheduler" package="snake" visibility="public" xPosition="26.0" yPosition="299.0">
+      <Fields>
+        <Field name="instanceGame" type="GameScene" visibility="private"/>
+        <Field name="actions" type="ActionListener[]" visibility="private"/>
+        <Field name="timerBonus" type="Timer" visibility="private"/>
+        <Field name="timerMotion" type="Timer[]" visibility="private"/>
+        <Field name="timeBonus" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="GameScene" name="instanceGame"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="valueSpeed" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="actuate" returnType="void" visibility="public">
+          <Argument type="int" name="e"/>
+        </Method>
+        <Method name="createBonus" returnType="void" visibility="private"/>
+        <Method name="startBonus" returnType="void" visibility="public"/>
+        <Method name="stopBonus" returnType="void" visibility="private"/>
+        <Method name="createMotion" returnType="void" visibility="private"/>
+        <Method name="startMotion" returnType="void" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+        <Method name="stopMotion" returnType="void" visibility="public">
+          <Argument type="int" name="t"/>
+        </Method>
+        <Method name="stopAllMotions" returnType="void" visibility="public"/>
+        <Method name="increaseSpeed" returnType="void" visibility="public"/>
+        <Method name="restoreSpeed" returnType="void" visibility="public"/>
+        <Method name="stopAllTimers" returnType="void" visibility="public"/>
+        <Method name="getSpeed" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="SnakeFrame" package="snake" visibility="public" xPosition="360.0" yPosition="512.0">
+      <Fields>
+        <Field name="contentPane" type="SnakePanel" visibility="private"/>
+        <Field name="f" type="FramesArc" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="SnakePanel" package="snake" visibility="public" xPosition="263.0" yPosition="762.0">
+      <Fields>
+        <Field name="btnSalir" type="JButton" visibility="private"/>
+        <Field name="btnJugar" type="JButton" visibility="private"/>
+        <Field name="btnTabla" type="JButton" visibility="private"/>
+        <Field name="lblImagen" type="JLabel" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="paint" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+        <Method name="getBtnSalir" returnType="JButton" visibility="public"/>
+        <Method name="setBtnSalir" returnType="void" visibility="public">
+          <Argument type="JButton" name="btnSalir"/>
+        </Method>
+        <Method name="getBtnJugar" returnType="JButton" visibility="public"/>
+        <Method name="setBtnJugar" returnType="void" visibility="public">
+          <Argument type="JButton" name="btnJugar"/>
+        </Method>
+        <Method name="getLblImagen" returnType="JLabel" visibility="public"/>
+        <Method name="setLblImagen" returnType="void" visibility="public">
+          <Argument type="JLabel" name="lblImagen"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="instanceGame" source="snake.Control" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="motion" source="snake.GameScene" target="snake.LogicaJuego" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="snake.App" target="snake.App" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="keyEventDispatcher" source="snake.GameScene" target="snake.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instanceGame" source="snake.LogicaSnake" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instanceGame" source="snake.Scheduler" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="snake.GameScene" target="snake.LogicaJuego" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="app" source="snake.App" target="snake.App" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="f" source="snake.LogicaSnake" target="snake.FramesArc" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="contentPane" source="snake.SnakeFrame" target="snake.SnakePanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="f" source="snake.SnakeFrame" target="snake.FramesArc" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="play" source="snake.GameScene" target="snake.LogicaSnake" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instanceGame" source="snake.LogicaJuego" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="snake.GameScene" target="snake.LogicaSnake" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
