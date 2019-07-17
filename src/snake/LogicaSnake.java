@@ -2,8 +2,6 @@ package snake;
 
 import java.awt.Color;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.ImageIcon;
@@ -12,9 +10,6 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 public class LogicaSnake extends JFrame {
-
-    // SE CREA ARCHIVO DE TIPO ARCHIVOS PUNTAJE
-    FramesArc f = new FramesArc();
 
     // OBJETO PARA CARGAR EL AMBIENTE
     private GameScene instanceGame;
@@ -261,9 +256,6 @@ public class LogicaSnake extends JFrame {
             instanceGame.restoreColorPanel();
             // MUESTRA MENSAJE DE VICTORIA
             JOptionPane.showMessageDialog(null, "Ganaste! :0");
-            // LLAMA AL METODO LEER DE ARVHIVOS PUNTAJE
-            dispose();
-            f.cerrarJuego();
         }
     }
 
@@ -279,7 +271,6 @@ public class LogicaSnake extends JFrame {
             // MENSAJE DE PERDIDA
             JOptionPane.showMessageDialog(null, "Perdiste xd");
             dispose();
-            f.cerrarJuego();
 
         }
         ;

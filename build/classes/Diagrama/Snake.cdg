@@ -2,7 +2,7 @@
 
 <ClassDiagram name="Snake">
   <ClassDiagramComponents>
-    <Class name="App" package="snake" visibility="public" xPosition="37.0" yPosition="37.0">
+    <Class name="App" package="snake" visibility="public" xPosition="20.0" yPosition="20.0">
       <Fields>
         <Field name="rootPanel" type="JPanel" visibility="private"/>
         <Field name="app" type="App" visibility="private" isStatic="true"/>
@@ -20,7 +20,7 @@
         <Method name="calculateScreen" returnType="double[]" visibility="private"/>
       </Methods>
     </Class>
-    <Class name="Control" package="snake" visibility="public" xPosition="709.0" yPosition="652.0">
+    <Class name="Control" package="snake" visibility="public" xPosition="320.0" yPosition="20.0">
       <Fields>
         <Field name="instanceGame" type="GameScene" visibility="private"/>
       </Fields>
@@ -35,7 +35,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Dialog" package="snake" visibility="public" xPosition="278.0" yPosition="37.0">
+    <Class name="Dialog" package="snake" visibility="public" xPosition="620.0" yPosition="20.0">
       <Fields>
         <Field name="actions" type="ActionListener[]" visibility="private"/>
         <Field name="font" type="Font" visibility="private"/>
@@ -52,7 +52,7 @@
         <Method name="createDialog" returnType="void" visibility="private"/>
       </Methods>
     </Class>
-    <Class name="FramesArc" package="snake" visibility="public" xPosition="519.0" yPosition="762.0">
+    <Class name="FramesArc" package="snake" visibility="public" xPosition="920.0" yPosition="20.0">
       <Fields>
         <Field name="s" type="boolean" visibility="package"/>
       </Fields>
@@ -66,7 +66,7 @@
         <Method name="cerrarJuego" returnType="void" visibility="package"/>
       </Methods>
     </Class>
-    <Class name="GameScene" package="snake" visibility="public" xPosition="666.0" yPosition="37.0">
+    <Class name="GameScene" package="snake" visibility="public" xPosition="1220.0" yPosition="20.0">
       <Fields>
         <Field name="panelGame" type="JPanel" visibility="private"/>
         <Field name="matrix" type="JLabel[][]" visibility="private"/>
@@ -107,7 +107,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="LogicaJuego" package="snake" visibility="public" xPosition="1066.0" yPosition="20.0">
+    <Class name="LogicaJuego" package="snake" visibility="public" xPosition="1520.0" yPosition="20.0">
       <Fields>
         <Field name="instanceGame" type="GameScene" visibility="private"/>
         <Field name="actions" type="ActionListener[]" visibility="private"/>
@@ -141,9 +141,8 @@
         <Method name="getSpeed" returnType="int" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="LogicaSnake" package="snake" visibility="public" xPosition="1066.0" yPosition="433.0">
+    <Class name="LogicaSnake" package="snake" visibility="public" xPosition="1820.0" yPosition="20.0">
       <Fields>
-        <Field name="f" type="FramesArc" visibility="package"/>
         <Field name="instanceGame" type="GameScene" visibility="private"/>
         <Field name="matrix" type="JLabel[][]" visibility="private"/>
         <Field name="snakeLen" type="int" visibility="private"/>
@@ -198,7 +197,7 @@
         <Method name="getFoodInBonus" returnType="ArrayList&lt;String&gt;" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Principal" package="snake" visibility="public" xPosition="308.0" yPosition="240.0">
+    <Class name="Principal" package="snake" visibility="public" xPosition="2120.0" yPosition="20.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -207,7 +206,7 @@
         </Method>
       </Methods>
     </Class>
-    <Class name="Scheduler" package="snake" visibility="public" xPosition="26.0" yPosition="299.0">
+    <Class name="Scheduler" package="snake" visibility="public" xPosition="20.0" yPosition="420.0">
       <Fields>
         <Field name="instanceGame" type="GameScene" visibility="private"/>
         <Field name="actions" type="ActionListener[]" visibility="private"/>
@@ -244,7 +243,7 @@
         <Method name="getSpeed" returnType="int" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="SnakeFrame" package="snake" visibility="public" xPosition="360.0" yPosition="512.0">
+    <Class name="SnakeFrame" package="snake" visibility="public" xPosition="320.0" yPosition="420.0">
       <Fields>
         <Field name="contentPane" type="SnakePanel" visibility="private"/>
         <Field name="f" type="FramesArc" visibility="private"/>
@@ -254,11 +253,10 @@
       </Constructors>
       <Methods/>
     </Class>
-    <Class name="SnakePanel" package="snake" visibility="public" xPosition="263.0" yPosition="762.0">
+    <Class name="SnakePanel" package="snake" visibility="public" xPosition="620.0" yPosition="420.0">
       <Fields>
         <Field name="btnSalir" type="JButton" visibility="private"/>
         <Field name="btnJugar" type="JButton" visibility="private"/>
-        <Field name="btnTabla" type="JButton" visibility="private"/>
         <Field name="lblImagen" type="JLabel" visibility="private"/>
       </Fields>
       <Constructors>
@@ -284,19 +282,18 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="instanceGame" source="snake.Control" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="motion" source="snake.GameScene" target="snake.LogicaJuego" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <UseRelation source="snake.App" target="snake.App" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="keyEventDispatcher" source="snake.GameScene" target="snake.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="instanceGame" source="snake.LogicaSnake" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="contentPane" source="snake.SnakeFrame" target="snake.SnakePanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="instanceGame" source="snake.Scheduler" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instanceGame" source="snake.Control" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="snake.App" target="snake.App" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instanceGame" source="snake.LogicaJuego" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="keyEventDispatcher" source="snake.GameScene" target="snake.Control" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="f" source="snake.SnakeFrame" target="snake.FramesArc" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="motion" source="snake.GameScene" target="snake.LogicaJuego" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="snake.GameScene" target="snake.LogicaJuego" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="app" source="snake.App" target="snake.App" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="f" source="snake.LogicaSnake" target="snake.FramesArc" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="contentPane" source="snake.SnakeFrame" target="snake.SnakePanel" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="f" source="snake.SnakeFrame" target="snake.FramesArc" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="play" source="snake.GameScene" target="snake.LogicaSnake" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="instanceGame" source="snake.LogicaJuego" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="snake.GameScene" target="snake.LogicaSnake" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="play" source="snake.GameScene" target="snake.LogicaSnake" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="instanceGame" source="snake.LogicaSnake" target="snake.GameScene" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>

@@ -11,11 +11,6 @@ package snake;
 import java.awt.EventQueue;
 import java.io.*;
 
-/**
- * @author Daniel Arenas y Pedro Higuera
- * @version 1.0
- */
-
 public class Principal {
 
 	// AQUI VA EL MAIN
