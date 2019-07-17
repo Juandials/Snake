@@ -16,7 +16,7 @@ public class Control implements KeyEventDispatcher {
 	}
 
 	// METODO QUE CAPTURA LAS TECLAS QUE SE PRESIONAN
-	/** @return Booelan que detecta si hay una tecla presionada */
+
 	public boolean dispatchKeyEvent(KeyEvent e) {
 
 		if (e.getID() == KeyEvent.KEY_PRESSED) {

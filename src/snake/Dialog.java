@@ -13,17 +13,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-/**
- *
- * @author pr0mming
- * 
- *         SnakeProject is a project with the purpose to fully exploit tools
- *         Java (Swing and AWT) specifically ... If you think you can help me
- *         improve this project it would be great
- * 
- *         GitHub: https://github.com/pr0mming
- */
-
 public class Dialog extends JDialog {
 
 	private ActionListener[] actions;

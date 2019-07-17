@@ -13,7 +13,7 @@ public class FramesArc extends JFrame {
 	}
 
 	// CONSTRUCTOR DE POLIMORFISMO PARA ACTUALIZAR FRAME
-	/** @param Bolean detecta si se reinicia el Frame */
+
 	FramesArc(boolean s) {
 		if (s) {
 			SnakeFrame nuevo = new SnakeFrame();

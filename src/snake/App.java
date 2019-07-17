@@ -8,11 +8,6 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-/**
- * @author Daniel Arenas y Pedro Higuera
- * @version 1.0
- * 
- */
 public class App extends JFrame {
 //SE CREA EL PANEL Y SE CREA OBJETO DE TIPO APP
 	private JPanel rootPanel;

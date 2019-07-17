@@ -1,8 +1,10 @@
 /*
- *NOMBRE DEL PROGRAMA: PROYECTO FINAL DE PROGRAMACI�N
- *AUTOR: DANIEL ARENAS // PEDRO HIGUERA
- *FECHA: XXXX X DE 2019
- *VERSION: 0.1 
+    Juan Diego León - 20171020157
+
+    Stiven Arango - 20182020032
+
+    Mateo Matamoros - 20182020037
+
 */
 package snake;
 

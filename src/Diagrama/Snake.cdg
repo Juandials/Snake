@@ -198,7 +198,7 @@
         <Method name="getFoodInBonus" returnType="ArrayList&lt;String&gt;" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Principal" package="snake" visibility="public" xPosition="2120.0" yPosition="20.0">
+    <Class name="Principal" package="snake" visibility="public" xPosition="308.0" yPosition="240.0">
       <Fields/>
       <Constructors/>
       <Methods>
